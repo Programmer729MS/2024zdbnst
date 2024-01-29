@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="./stu.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    
+    
+    <header>
+        <div class="header">
+            <p><a href="./index.html">&LeftArrow;</a></p>
+            <h1>AJIN M. SADIYA</h1>
+        </div>
+        <form>
+            <input type="search" name="" id="search-item" placeholder="search-product" 
+            onkeyup="search()">
+        </form>
+    </header>
+
+    <!-- <div class="main-container">       
+        <div class="first-con" id="product-list" data-aos="slide-right" data-aos-delay="100" data-aos-duration="1000">
+            <div class="content" >
+                <div class="content-image">
+                    <img src="./image/nml.jpg" alt="">
+                </div>
+                <div class="content-text">
+                    <h3>NAME:- <span>MUHAMMAD Salisu HASSAN</span></h3>
+                    <p class="n-name">N-NAME:- <span> M.SALEES</span> </p>
+                    <p class="address">ADRESS:- <span>N0 243 CHIRANCHI DUHUWA</span></p>
+                    <p class="phone">PHONE NO:- <span> 08028365899/08130350584</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="second-con" data-aos="slide-left" data-aos-delay="100" data-aos-duration="1000">
+            <div class="content">
+                <div class="content-text">
+                    <h3>NAME:- <span>AHAMAD Salisu HASSAN</span></h3>
+                    <p class="n-name">N-NAME:- <span> M.SALEES</span> </p>
+                    <p class="address">ADRESS:- <span>N0 243 CHIRANCHI DUHUWA</span></p>
+                    <p class="phone">PHONE NO:- <span> 08028365899/08130350584</span></p>
+                </div>
+                <div class="content-image">
+                    <img src="./image/nml.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="product-list" id="product-list">
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>MUHAMMAD  S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>SUMAYYA  S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>SALIHU S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2> ANAS  S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>   S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>ABUBAKAR  S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+        <div class="product">
+            <img src="./image/loader.gif.jpg" alt="">
+            <div class="p-details">
+                <h2>HAJIYA  S HASSAN</h2>
+                <h3>ADRESS:- dorayi chiranchi </h3>
+                <h3>phone number: 08023546464</h3>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <div class="bottom-bar">
+        <a href="./index.html"><ion-icon name="home-outline" class="icon active" onclick="change(this)"></ion-icon></a>
+        <a href="./stu.html"><ion-icon name="person-outline" class="icon" onclick="change(this)"></ion-icon></a>
+        <a href="./gallery.html"><ion-icon name="image-outline" class="icon" onclick="change(this)"></ion-icon></a>
+        <a href="#"><ion-icon name="list-outline" class="icon" onclick="change(this)"></ion-icon></a>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        
+
+        // Bottom Navigation Bar
+
+        function change(item){
+            const button = document.querySelectorAll('ion-icon');
+            button.forEach(function(obj){
+                obj.classList.remove("active");
+            });
+
+            item.classList.add("active");
+        }
+
+        // aos animation
+        AOS.init();
+
+        //search bar
+
+        const search = () =>{
+        const searchbox = document.getElementById("search-item").value.toUpperCase();
+        const storeitems = document.getElementById("product-list")
+        const product = document.querySelectorAll(".product")
+        const pname = storeitems.getElementsByTagName("h2")
+
+        for(var i=0; i < pname.length; i++){
+            let match = product[i].getElementsByTagName('h2')[0];
+
+            if(match){
+            let textvalue = match.textContent || match.innerHTML
+
+            if (textvalue.toUpperCase().indexOf(searchbox) > -1){
+                product[i].style.display = "";
+            }else{
+                product[i].style.display = "none";
+            }
+            }
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+</head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+    background-color: #06283d;
+    padding: 0.5rem;
+}
+
+
+
+.arrow {
+    top: -0.6rem;
+    position: absolute;
+    color:  white;
+    /* background: white; */
+    padding: 0.3rem;
+    cursor: pointer;
+    width: 7rem;
+    left: 0;
+    transition: 0.4s;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.arrow:hover {
+    opacity: .70;
+}
+
+
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    margin: 1rem;
+    padding: 3rem;
+    border-radius: 20px 0;
+    /* border: 1px solid gray; */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.flex img {
+    width: 30px;
+
+    border-radius: 100%;
+    /* border: 5px double  darkred; */
+    box-shadow: -8px -8px 24px 0  rgb(9, 6, 7), 8px 8px 24px 0 rgb(0, 54, 58);
+}
+
+.container .content .box .glow img {
+    width: 100%;
+    border-radius: 100%;
+    /* margin-left: 3rem; */
+}
+
+.flex-1 {
+    padding: 3rem;
+    width: 50%;
+    line-height: 3rem;
+    /* border: 2px solid red; */
+}
+
+h4 {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: hsl(183, 100%, 22%);
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #06283d;
+}
+
+.animated-text {
+    font-weight: 600;
+    font-size: 25px;
+    min-width: 280px;
+}
+
+.animated-text span {
+    position: relative;
+}
+
+.animated-text span::before {
+    content: "Youtuber";
+    color: #67022e;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #2f3542;
+    /* border-left: 2px solid #ff7f50; */
+    right: -8px;
+    /* animation: cursor .2s infinite; */
+}
+
+ 
+
+@keyframes words {
+    0%,20%{
+        content: "Youtuber";
+    }
+    21%,40%{
+        content: "";
+    }
+    41%,60%{
+        content: "Developer";
+    }
+    61%,80%{
+        content: "Graphic designer";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+}
+
+ 
+ 
+
+.flex-1 a:hover {
+    /* transform: scale(1.1); */
+    opacity: .70;
+    /* border-bottom: 1px solid #180202; */
+    color: rgb(255, 0, 187);
+}
+
+.box {
+    padding: 0.5rem;
+    background-color: #09507c;
+    border-bottom: 0 40px 0 40px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    z-index: 100%;
+    border-radius: 100%;
+    box-shadow: 0.2px 0.2px 7px 0.2px;
+    width: 30%;
+    height: 100%;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background-image: conic-gradient(transparent, transparent, transparent, #87ffab);
+    animation: design 4s linear infinite;
+    animation-delay: -2s;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background-image: conic-gradient(transparent, transparent, transparent, rgb(216, 11, 11));
+    animation: design 4s linear infinite;
+}
+
+.box .color {
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+    z-index: 1;
+    border-radius: 100%;
+    
+}
+
+.color img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+     
+}
+
+.flex-1 img{
+    width: 3rem;
+    border-radius: 100%;
+}
+
+
+@keyframes design {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container-lst {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+ 
+
+ 
+
+
+
+@media (max-width:600px) {
+
+    .heading {
+        padding: 0.5rem;
+    }
+
+    .links {
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .flex-1 img {
+        width: 2rem;
+        box-shadow: -2px -2px 6px 0  pink, 2px 2px 6px 0 rgb(1, 236, 253);
+        /* margin-left: -1rem; */
+       
+    }
+
+    .flex-1 img:hover{
+        transform: scale(1.1);
+    }
+    
+    h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .arrow {
+        font-size: 2rem;
+        width: 3rem;
+        /* top: -1rem; */
+    }
+
+    .box {
+        width: 90%;
+        padding: 0;
+        border-bottom: 0;
+        border: 2px solid #fff;
+        margin: auto;
+    }
+
+    .box .color {
+        padding: 0.5rem;
+    }
+
+    .color {
+        /* background-color: #fff; */
+        border-radius: 100%;
+        z-index: 8;
+        width: 100%;
+        padding: 0;
+    }
+
+    .color img {
+        width: 100%;
+        border-radius: 100%;
+    }
+
+    span {
+        font-size: 0.8rem;
+    }
+
+    .flex-1 a {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .content {
+        display: block;
+        width: 90%;
+    }
+
+    .container {
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .flex-1 {
+        padding: 1rem;
+        width: 20rem;
+        line-height: 2rem;
+
+    }
+
+
+    .box img {
+        width: 100%;
+    }
+
+    .glow {
+        width: 90%;
+    }
+
+    .box::after {
+        width: 100%;
+    }
+
+    .box::before {
+        width: 70%;
+    }
+} 
+</style>
+<body>
+
+    
+    <div class="heading">
+        <header>
+            <a href="./index.html"><p class="arrow">&LeftArrow;</p></a>
+            <h1>About Me</h1>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="box">
+                <div class="color"><img src="./image/IMG-20230917-WA0040~2.jpg" alt=""></div>
+            </div>
+
+            <div class="flex-1">
+                <h4>DEVELOPED BY</h4>
+                <h2>Muhammad Salisu Hassan</h2>
+                <div class="animated-text">
+                    I'm a <span></span>
+                </div>
+                <h4>Contact</h4>
+                <div class="links">
+                    <a href="tel:08130350584"><img src="./image/icon (6).jpg" alt=""></a>
+                    <a href="https://wa.link/8zfka7"><img src="./image/icon (3).jpg" alt=""></a>
+                    <a href="https://www.facebook.com/muhammadsalisu.hassan.729"><img src="./image/icon (1).jpg" alt=""></a>
+                    <a href="https://instagram.com/Muhammadsalisuhassan729?igshid=YWYwM2I1ZDdmOQ=="><img src="./image/icon (2).jpg" alt=""> </a>
+                    <a href=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+ 
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+               
+
+        // Bottom Navigation Bar
+
+        function change(item){
+            const button = document.querySelectorAll('ion-icon');
+            button.forEach(function(obj){
+                obj.classList.remove("active");
+            });
+
+            item.classList.add("active");
+        }
+
+    // // aos animation
+      AOS.init();
+    </script>
+
+</body>
+</html>

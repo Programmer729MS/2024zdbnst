@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAIDU BN SABIT</title>
+</head>
+
+<style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      background-color: rgb(24, 4, 4);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .slideshow-container{
+      width: 100%;
+      position: relative;
+      margin: auto;
+    }
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    .dot {
+      width: 15px;
+      height: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active{
+      background-color: #71717171;
+    }
+
+    .fade{
+      animation:  fade;
+      animation: 1.5s;
+    }
+
+    @keyframes fade {
+      form{opacity: .4}
+      to{opacity: .1;}
+    }
+
+    @media (max-width:600px) {
+      .text {
+        font-size: 11px;
+      }
+    }
+</style>
+<body>
+    
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="nubertext">1 / 3</div>
+      <img src="./image/20231216_143427.jpg" style="width: 100%;" alt="">
+      <div class="text">caption text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="nubertext">2 / 3</div>
+      <img src="./image/IMG_20230922_155012.jpg" style="width: 100%;" alt="">
+      <div class="text">caption text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="nubertext">3 / 3</div>
+      <img src="./image/loader.gif.jpg" style="width: 100%;" alt="">
+      <div class="text">caption text</div>
+    </div>
+
+  </div>  
+  <br>
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      for(i = 0; i < slides.length; i++)
+      {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if(slideIndex > slides.length)
+      {slideIndex=0}
+      for (i = 0; i < dots.length; i++){
+        dots[i].className.replace("active", "")
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += "active";
+
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+</body>
+</html>
